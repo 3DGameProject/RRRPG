@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class MapGenerater : MonoBehaviour
 {
@@ -12,9 +12,9 @@ public class MapGenerater : MonoBehaviour
     {
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject map = Instantiate(mapPrefab);
-            map.SetActive(false); 
-            mapPool.Enqueue(map); 
+            GameObject map = Instantiate(mapPrefab, GetSpawnPosition(), Quaternion.identity);
+            map.SetActive(false);
+            mapPool.Enqueue(map);
         }
     }
 
@@ -28,14 +28,21 @@ public class MapGenerater : MonoBehaviour
         }
         else
         {
-            GameObject bullet = Instantiate(mapPrefab);
+            GameObject bullet = Instantiate(mapPrefab, GetSpawnPosition(), Quaternion.identity);
             return bullet;
         }
     }
 
     public void ReturnBulletToPool(GameObject map)
     {
-        map.SetActive(false); 
-        mapPool.Enqueue(map); 
+        map.SetActive(false);
+        mapPool.Enqueue(map);
+    }
+
+    private Vector3 GetSpawnPosition()
+    {
+        Vector3 currentPosition = transform.position;
+        Vector3 spawnPosition = currentPosition + new Vector3(-40f, 0f, 0f);
+        return spawnPosition;
     }
 }
