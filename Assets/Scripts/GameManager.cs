@@ -1,16 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private static T instance;
+    private static object lockObject = new object();
+    private static bool applicationIsQuitting = false;
+
+    public static T Instance
+    {
+        get
+        {
+            if(applicationIsQuitting)
+            {
+                return null;
+            }
+
+            lock(lockObject)
+            {
+                if(instance == null)
+                {
+                    instance = (T)FindObjectOfType(typeof(T));
+
+                    if(FindObjectsOfType(typeof(T)).Length > 1 ) 
+                    { 
+                        return instance;
+                    }
+                }
+
+                if(instance == null)
+                {
+                    GameObject singletonObject = new GameObject();
+                    instance = singletonObject.AddComponent<T>();
+                    singletonObject.name = typeof(T).ToString() + " (Singleton)";
+
+                    DontDestroyOnLoad(singletonObject);
+                }
+            }
+            return instance;
+        }
+    }
+    private void OnDestroy()
+    {
+        applicationIsQuitting =true;
+    }
+}
+
+public class GameManager : Singleton<GameManager>
+{
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
