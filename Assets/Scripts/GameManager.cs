@@ -50,6 +50,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
 public class GameManager : Singleton<GameManager>
 {
+    public MapGenerator mapGenerator;
 
     void Start()
     {
@@ -58,6 +59,6 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
-        
+        mapGenerator.GetMapFromSPool();
     }
 }

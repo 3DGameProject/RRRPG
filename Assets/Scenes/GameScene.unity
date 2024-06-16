@@ -4445,7 +4445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751010c20f7993e42b7617bce58da102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 1774097682}
 --- !u!4 &902190619
 Transform:
   m_ObjectHideFlags: 0
@@ -4764,7 +4764,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapPrefab: {fileID: 151672746292987747, guid: 3ead5131aabfb2a4484cc71296883e27,
     type: 3}
-  poolSize: 5
+  poolSize: 10
+  player: {fileID: 1429712881}
 --- !u!1 &1033669972
 GameObject:
   m_ObjectHideFlags: 0
@@ -7865,7 +7866,7 @@ GameObject:
   - component: {fileID: 1774097683}
   - component: {fileID: 1774097682}
   m_Layer: 5
-  m_Name: CoinCountTxt
+  m_Name: ScoreTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
