@@ -71,7 +71,6 @@ public class GameManager : Singleton<GameManager>
 
     public void ShowUI(Button clickedButton)
     {
-
         storePanel.gameObject.SetActive(false);
         optionPanel.gameObject.SetActive(false);
 
@@ -83,7 +82,24 @@ public class GameManager : Singleton<GameManager>
         {
             InvenPanel.gameObject.SetActive(true);
             return;
-        }    
+        }
+        Time.timeScale = 0f;
         HUDCanvas.gameObject.SetActive(false);
+    }
+
+    public void CloseUI(Button clickedButton)
+    {
+
+        if (clickedButton.name == "QuitOptionBtn")
+            optionPanel.gameObject.SetActive(false);
+        else if (clickedButton.name == "QuitStoreBtn")
+            storePanel.gameObject.SetActive(false);
+        else if (clickedButton.name == "LogBtn")
+        {
+            InvenPanel.gameObject.SetActive(false);
+            return;
+        }
+        HUDCanvas.gameObject.SetActive(true);
+        Time.timeScale = 1f;
     }
 }
