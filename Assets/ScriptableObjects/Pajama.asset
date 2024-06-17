@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0dc21fb811c9c540a2a31690075a008, type: 3}
-  m_Name: Hat
+  m_Name: Pajama
   m_EditorClassIdentifier: 
-  itemName: "\uBAA8\uC790"
-  price: 100
-  description: "\uBA4B\uC7C1\uC774\uB4E4\uC744 \uC704\uD55C \uBAA8\uC790."
+  itemName: "\uD30C\uC790\uB9C8 \uBAA8\uC790"
+  price: 150
+  description: "\uC219\uBA74\uC5D0 \uB3C4\uC6C0\uB418\uB294 \uBAA8\uC790"
+  equipPrefab: {fileID: 8895085306622381848, guid: 584860f65d923f34296e7682c56af43a,
+    type: 3}

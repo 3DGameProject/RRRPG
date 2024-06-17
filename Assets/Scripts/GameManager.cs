@@ -1,7 +1,9 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
@@ -50,13 +52,22 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
 public class GameManager : Singleton<GameManager>
 {
+    public Canvas alwaysOnDisplay;
+    public GameObject storePanel;
+    public GameObject optionPanel;
+
 
     void Start()
     {
-        
     }
 
     void Update()
+    {
+        alwaysOnDisplay.gameObject.SetActive(false); ;
+    }
+
+
+    public void ShowUI(Button clickedButton)
     {
 
     }
