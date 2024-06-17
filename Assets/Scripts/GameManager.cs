@@ -53,22 +53,37 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 public class GameManager : Singleton<GameManager>
 {
     public Canvas alwaysOnDisplay;
+    public Canvas HUDCanvas;
+
     public GameObject storePanel;
     public GameObject optionPanel;
-
+    public GameObject InvenPanel;
 
     void Start()
     {
+        alwaysOnDisplay.gameObject.SetActive(true);
+        HUDCanvas.gameObject.SetActive(true);
     }
-
-    void Update()
+    public void GameOver()
     {
-        alwaysOnDisplay.gameObject.SetActive(false); ;
-    }
 
+    }
 
     public void ShowUI(Button clickedButton)
     {
 
+        storePanel.gameObject.SetActive(false);
+        optionPanel.gameObject.SetActive(false);
+
+        if (clickedButton.name == "OptionBtn")
+            optionPanel.gameObject.SetActive(true);
+        else if (clickedButton.name == "StoreBtn")
+            storePanel.gameObject.SetActive(true);
+        else if (clickedButton.name == "InvenBtn")
+        {
+            InvenPanel.gameObject.SetActive(true);
+            return;
+        }    
+        HUDCanvas.gameObject.SetActive(false);
     }
 }

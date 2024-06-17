@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class ClickerGameNewInput : MonoBehaviour
+public class Clicker : MonoBehaviour
 {
     public Text scoreText;
 
