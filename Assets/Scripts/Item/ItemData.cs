@@ -10,6 +10,6 @@ public class ItemData : ScriptableObject
     //public Sprite icon;
    //public GameObject ItemPrefab;
 
-    //[Header("Equip")]
-    //public GameObject equipPrefab;
+    [Header("Equip")]
+    public GameObject equipPrefab;
 }
