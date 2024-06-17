@@ -4468,14 +4468,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e2d5d8a0ecb1748b1305813b6aa0da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileScale: 1
+  tileScale: 2
   noiseScale: 20
   tilePool: {fileID: 1611725928}
   player: {fileID: 1429712882}
   renderDistance: 100
   fixedYPosition: 0.43
   fixedYScale: 0.25
-  tileSpacing: 10
+  tileSpacing: 2
 --- !u!1 &925142836
 GameObject:
   m_ObjectHideFlags: 0
@@ -7584,8 +7584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fee2cf1210917141817a07884f86e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 469770333692111320, guid: 1ccc2bdd860381b4b91b9d46be4190b2,
-    type: 3}
+  Cube: {fileID: 151672746292987747, guid: 3ead5131aabfb2a4484cc71296883e27, type: 3}
   poolSize: 50
 --- !u!4 &1611725929
 Transform:

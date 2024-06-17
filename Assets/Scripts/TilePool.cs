@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TilePool : MonoBehaviour
 {
-    public GameObject tilePrefab;
+    public GameObject Cube;
     public int poolSize = 100;
 
     private Queue<GameObject> pool;
@@ -14,7 +14,7 @@ public class TilePool : MonoBehaviour
 
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject tile = Instantiate(tilePrefab);
+            GameObject tile = Instantiate(Cube);
             tile.SetActive(false);
             pool.Enqueue(tile);
         }
@@ -24,7 +24,7 @@ public class TilePool : MonoBehaviour
     {
         if (pool.Count == 0)
         {
-            GameObject tile = Instantiate(tilePrefab);
+            GameObject tile = Instantiate(Cube);
             tile.SetActive(false);
             pool.Enqueue(tile);
         }

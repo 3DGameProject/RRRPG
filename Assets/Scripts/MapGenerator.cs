@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    public float tileScale = 1f;
+    public float tileScale = 20f;
     public float noiseScale = 20f;
     public TilePool tilePool;
     public Transform player;
-    public int renderDistance = 10;
+    public int renderDistance = 100;
     public float fixedYPosition = 0f; // 고정된 y 좌표 값
     public float fixedYScale = 1f; // 고정된 y 스케일 값
     public int tileSpacing = 2; // 타일 간격을 추가로 설정
@@ -50,12 +50,5 @@ public class MapGenerator : MonoBehaviour
             tile.transform.localScale = new Vector3(tileScale, fixedYScale, tileScale); // y 스케일을 고정된 값으로 설정
             activeTiles.Add(position);
         }
-    }
-
-    private float CalculateHeight(float x, float z)
-    {
-        float xCoord = x / noiseScale;
-        float zCoord = z / noiseScale;
-        return Mathf.PerlinNoise(xCoord, zCoord);
     }
 }
