@@ -4,7 +4,6 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     public float tileScale = 20f;
-    public float noiseScale = 20f;
     public TilePool tilePool;
     public Transform player;
     public int renderDistance = 100;
