@@ -52,6 +52,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
 public class GameManager : Singleton<GameManager>
 {
+    public int scoreToCash = 0;
+
+    //  UI
     public Canvas alwaysOnDisplay;
     public Canvas HUDCanvas;
 
@@ -64,6 +67,12 @@ public class GameManager : Singleton<GameManager>
         alwaysOnDisplay.gameObject.SetActive(true);
         HUDCanvas.gameObject.SetActive(true);
     }
+
+    void GetCash()
+    {
+        
+    }
+
     public void GameOver()
     {
 

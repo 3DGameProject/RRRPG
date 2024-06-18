@@ -39,6 +39,7 @@ public class Clicker : MonoBehaviour
 
     void UpdateUI()
     {
+        GameManager.Instance.scoreToCash = score;
         scoreText.text = score.ToString();
     }
 }
