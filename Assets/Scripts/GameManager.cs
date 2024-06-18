@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -71,6 +72,8 @@ public class GameManager : Singleton<GameManager>
         alwaysOnDisplay.gameObject.SetActive(true);
         HUDCanvas.gameObject.SetActive(true);
         SolitudeCanvas.gameObject.SetActive(true);
+        GameOverPanel.gameObject.SetActive(false);
+        GameSuccessPanel.gameObject.SetActive(false);
     }
 
     void GetCash()
@@ -82,6 +85,7 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.Log("GameOver");
         Time.timeScale = 0f;
+  
         HUDCanvas.gameObject.SetActive(false);
         GameOverPanel.gameObject.SetActive(true);
     }
