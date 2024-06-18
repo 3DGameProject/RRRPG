@@ -54,18 +54,23 @@ public class GameManager : Singleton<GameManager>
 {
     public int scoreToCash = 0;
 
-    //  UI
+    //  UI: 나중에 UIManager로 옮기기
     public Canvas alwaysOnDisplay;
     public Canvas HUDCanvas;
+    public Canvas SolitudeCanvas;
 
     public GameObject storePanel;
     public GameObject optionPanel;
     public GameObject InvenPanel;
+    public GameObject GameOverPanel;
+    public GameObject GameSuccessPanel;
+
 
     void Start()
     {
         alwaysOnDisplay.gameObject.SetActive(true);
         HUDCanvas.gameObject.SetActive(true);
+        SolitudeCanvas.gameObject.SetActive(true);
     }
 
     void GetCash()
@@ -74,6 +79,14 @@ public class GameManager : Singleton<GameManager>
     }
 
     public void GameOver()
+    {
+        Debug.Log("GameOver");
+        Time.timeScale = 0f;
+        HUDCanvas.gameObject.SetActive(false);
+        GameOverPanel.gameObject.SetActive(true);
+    }
+
+    public void NextStage()
     {
 
     }
